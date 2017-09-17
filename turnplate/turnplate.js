@@ -1,0 +1,1 @@
+let plate = document.getElementById('plate');
