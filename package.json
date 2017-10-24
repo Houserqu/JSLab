@@ -1,0 +1,22 @@
+{
+  "name": "jslab",
+  "version": "1.0.0",
+  "description": "javascript lab",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Houserqu/JSLab.git"
+  },
+  "keywords": [
+    "js"
+  ],
+  "author": "houser",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Houserqu/JSLab/issues"
+  },
+  "homepage": "https://github.com/Houserqu/JSLab#readme"
+}
