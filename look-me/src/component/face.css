@@ -1,0 +1,21 @@
+.circle { 
+  width: 100px; 
+  height: 100px; 
+  background: red; 
+  -moz-border-radius: 50px; 
+  -webkit-border-radius: 50px; 
+  border-radius: 50px; 
+  position: absolute;
+  z-index: 99
+} 
+
+.circle-out { 
+  width: 500px; 
+  height: 500px; 
+  background: #bebebe; 
+  -moz-border-radius: 250px; 
+  -webkit-border-radius: 250px; 
+  border-radius: 250px; 
+  position: absolute;
+  left: 300px;
+} 
