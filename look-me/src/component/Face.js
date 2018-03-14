@@ -14,15 +14,16 @@ class Face extends Component {
   componentDidMount(){
     const { center, radius } = this.state;
     document.addEventListener('mousemove', e => {
-      // if( Math.pow(e.clientX - center.x - 25, 2) + Math.pow(e.clientY - center.y - 25, 2) <= Math.pow(radius, 2)){
-      //   this.setState({ x: e.clientX, y: e.clientY });
-      // }
-      if( center.x - radius < e.clientX && e.clientX < center.x + radius ){
-        this.setState({ x: e.clientX});
-      }
-
-      if( center.y - radius < e.clientY && e.clientY < center.y + radius ){
-        this.setState({ y: e.clientY});
+      if( Math.pow(e.clientX - center.x - 25, 2) + Math.pow(e.clientY - center.y - 25, 2) <= Math.pow(radius, 2)){
+        this.setState({ x: e.clientX, y: e.clientY });
+      } else {
+        if( center.x - radius < e.clientX && e.clientX < center.x + radius ){
+          this.setState({ x: e.clientX});
+        }
+  
+        if( center.y - radius < e.clientY && e.clientY < center.y + radius ){
+          this.setState({ y: e.clientY});
+        }
       }
     })
   }
@@ -39,6 +40,8 @@ class Face extends Component {
         <div className='circle' style={{ top: y-50, left: x-50}}/>
 
         <div className='circle-out'></div>
+
+        <p class="animated_div">CSS3 过渡</p>
       </div>
     )
   }
