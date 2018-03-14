@@ -5,7 +5,7 @@
  *     this.next = null;
  * }
  */
-// TODO: 需要改善
+// TODO: 当前方法是取出值相加再还原，如果初始数组太大，会导致值溢出
 /**
  * @param {ListNode} l1
  * @param {ListNode} l2
