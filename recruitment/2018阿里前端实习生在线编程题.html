@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <div id="page">
+
+        <div class="content main">
+
+            <div class="refer">
+
+                <ul>
+
+                    <li>1</li>
+
+                    <li>2</li>
+
+                </ul>
+
+             </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+<script>
+  var genCssSelector = function(e){
+    var result = [];
+    console.log(e.parentNode.nodeName);
+    if(e.parentNode.nodeName == '#document'){
+      return result;
+    }
+
+    var i = 0;
+    var cur_node = e;
+
+    for(i ;  ; i++){
+      if(cur_node.nodeName == '#document'){
+        break;
+      }else{
+        if(cur_node.getAttribute('id')){
+          result.push('#'+cur_node.getAttribute('id'));
+        } else if (cur_node.getAttribute('class')){
+          result.push('.'+cur_node.getAttribute('class'));
+        } else {
+          result.push(cur_node.nodeName.toLowerCase());
+        }
+      
+        cur_node = cur_node.parentNode;
+      }
+    }
+
+    return result;
+
+}
+
+
+
+document.addEventListener('click', function(e){
+
+//点击li时，返回：html body #page .content.main .refer ul li
+
+  console.log(genCssSelector(e.target));
+
+})
+</script>
+
+</html>
