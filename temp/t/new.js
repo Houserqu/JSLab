@@ -17,3 +17,7 @@ var removeDuplicates = function(nums) {
 
 
 console.log(removeDuplicates([1,2,2,4,4,4,5]));
+
+var str = "|4923|";
+
+console.log(str.slice(1,str.length-1));
