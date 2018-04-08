@@ -1,7 +1,6 @@
 #!/bin/sh  
-#============ get the file name ===========  
-Folder_A="/etc/"  
-for file_a in ${Folder_A}/*; do  
-    temp_file=`basename $file_a`  
+Folder="/etc/"  
+for file in ${Folder}/*; do  
+    temp_file=`basename $file`  
     echo $temp_file >> files.txt  
 done   
