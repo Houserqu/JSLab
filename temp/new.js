@@ -1,17 +1,13 @@
-var str1 = "abcdefg";
-var str2 = "hijklmn";
+var removeDuplicates = function(nums) {
+  var result_arr = [];
 
-//console.log(str1.charCodeAt(1));
+for(var i = 0; i < nums.length; i++){
+  if(result_arr.indexOf(nums[i]) < 0){
+    result_arr.push(nums[i]);
+  }
+}
+return result_arr.length;
+};
 
-//console.log(str2.concat(str1)
-//console.log()
 
-console.log(str1.substr(3,100));
-str1[3] = "O";
-
-console.log(str1);
-console.log(str2)
-console.log('Z'.charCodeAt(0))
-
-console.log(String.fromCharCode(90))
-
+console.log(removeDuplicates([1,1,2,3,4,3]))
