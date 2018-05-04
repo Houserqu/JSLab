@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DOM node</title>
+</head>
+<body>
+  <div id="a">
+    <div id="b" class="b1 b2">
+      <span>haha</span>
+      <div style="display: inline">123</div>
+      <a href="" id="c">ccc</a>
+    </div>
+  </div>
+
+  <span><div>hahah</div></span>
+</body>
+
+<script>
+  var a = document.getElementById('a');
+  var b = document.getElementById('b');
+  var c = document.getElementById('c');
+
+  // 父亲节点
+  console.log(b.parentNode); 
+
+  // 第一个子元素
+  console.log(b.firstElementChild);
+
+  // 第一个子节点   换行也算节点  为 #text 节点
+  console.log(b.firstChild);
+
+  // 节点文本值
+  console.log(a.innerHTML);
+
+  // 获取最后一个子元素和节点
+  console.log(b.lastElementChild);
+  console.log(b.lastChild);
+
+  // 元素属性操作
+  console.log(b.attributes)
+  console.log(b.hasAttribute('id'))
+
+  // 插入新子节点
+  var new_dom = document.createElement('span');
+  new_dom.appendChild(document.createTextNode('new  dom'));
+  b.appendChild(new_dom);
+
+  // 删除子节点
+  b.removeChild(c);
+
+
+
+  
+</script>
+
+</html>

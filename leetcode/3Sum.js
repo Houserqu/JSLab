@@ -20,9 +20,7 @@ A solution set is:
  * @param {number[]} nums
  * @return {number[][]}
  */
-
-
-var improve3num = function (nums) {
+var threeNum = function (nums) {
   nums.sort(function(a,b){
     return a-b;
   });
