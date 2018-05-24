@@ -1,17 +1,33 @@
-var p1 = new Promise((resolve, reject) => {
-  resolve("p1")
-})
+// var p1 = new Promise((resolve, reject) => {
+//   setTimeout(() => resolve(), ms, 'done');
+// })
 
-function timeout(ms){
+function timeoutB(time) {
   return new Promise((resolve, reject) => {
-    setTimeout(() => resolve(p1), ms, 'done');
+    setTimeout((msg) => resolve(msg), time, time);
   })
 }
 
-timeout(100).then(result => {
-  return result
-}).then(result => {
-  console.log(result)
-}).finally(()=> {
-  console.log("finally");
+function timeoutA(ms){
+  return new Promise((resolve, reject) => {
+    setTimeout((time) => reject(time), ms, 'A');
+  })
+}
+
+// timeoutA(1000).then(result => {
+//   console.log(result);
+//   return result
+// }).then(result => {
+//   return timeoutB(result)
+// }).then(result => {
+//   console.log(result)
+//   return result;
+// }).then(result => {
+//   console.log(result);
+// }).catch(e => {
+//   console.log('error:',e);
+// })
+
+Promise.all([timeoutA, timeoutB]).then(result => {
+  console.log(result);
 })
